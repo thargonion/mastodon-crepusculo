@@ -1,0 +1,471 @@
+﻿@-moz-document url-prefix("URL principal da sua instância") {
+/*
+    *** Tema "Crepúsculo" para a rede social Mastodon. Funciona melhor alterando o tema padrão do Mastodon para "Noturno" ou "Alto Contraste" e na interface web simplificada. ***
+    *** Use com a extensão Stylus (https://addons.mozilla.org/pt-BR/firefox/addon/styl-us/) e personalize com as cores que preferir. ***
+*/
+
+
+/*
+    *** Definindo variáveis, personalize aqui com as cores que desejar. Recomendado modificar apenas essa parte. ***
+*/
+:root {
+    --logo: #fff;
+    /*Cor do texto na logo*/
+    
+    --backColor: #1d0f06;
+    /*Cor do plano de fundo principal */
+    
+    --mainCol: #40352d;
+    /*Cor da coluna principal central*/
+    
+    --mainText: #fff;
+    /*Cor principal do texto*/
+    
+    --navText: #000;
+    /*Cor dos textos nas barras de navegação, colunas e botões*/
+    
+    --account: #fbca0c;
+    /*Cor dos links e nomes das contas*/
+    
+    --detail: #463a31;
+    /*Cor do plano de fundo no status detalhado (quando você clica para abrir um toot)*/
+    
+    --meta: #c1baba;
+    /*Cor dos metadados (data e ícones de privacidade sob um toot*/
+    
+    --directMsg: #6c3d02;
+    /*Cor do plano de fundo nas mensagens diretas*/
+    
+    --actWindow:#b05204;
+    /*Cor da janela ativa no menu e mensagens não lidas*/
+    
+    --navBar: #c86911;
+    /*Plano de fundo das barras de navegação, coluna lateral (menu) e do elefantinho*/
+    
+    --hovBack: #9d5618;
+    /*Cor do plano de fundo ao passar do mouse (hover)*/
+    
+    --searchBar: #251507;
+    /*Cor da barra de pesquisa*/
+    
+    --searchTextBar: #fff;
+    /*Cor do texto da barra de pesquisa e descrição de imagens*/
+    
+    --icon: #e6d839c9;
+    /*Cor dos ícones*/
+    
+    --bioColor: #5c4429;
+    /*Cor da bio*/
+    
+    --answer: #65501b;
+    /*Cor da tela de respondendo ao toot e lista da bio*/
+    
+    --border: 0px;
+    /*Tamanho das bordas. 0px remove as bordas*/
+    
+    --bordColor: #332828;
+    /*Cor das bordas (se houver)*/
+}
+
+
+/*
+    *** A partir daqui começam edições mais específicas. Não há necessidade de modificar a partir daqui. ***
+*/
+
+/*
+    Configurações opcionais
+*/
+
+.character-counter.character-counter{
+    background-color:#ebebeb;   
+}/*Evita que a contagem de caracteres na descrição de imagens e composição de toots se torne invisível dependendo da cor do texto*/
+
+.status__wrapper-direct,
+.detailed-status.detailed-status-direct,
+.status.status-direct.status-reply,
+.status.status-direct {
+    background-color: var(--directMsg);
+}
+/*muda a cor das mensagens diretas*/
+
+.conversation--unread {
+    background-color: var(--actWindow);
+}
+/*Cor das mensagens não lidas*/
+
+/*
+.card .avatar img,
+.activity-stream .status.light .status__avatar img,
+.account__avatar,
+    .account__avatar-overlay-base,
+    .account__avatar-overlay-overlay
+{border-radius: 50%} // Deixa as fotos de avatares redondos
+*/
+
+body,
+.tabs-bar__wrapper,
+.admin-wrapper {
+    background-color: var(--backColor);
+    color: #ddd8d8;
+}
+
+#logo-symbol-wordmark > path:nth-child(1){
+         fill: var(--navBar); /*Cor do elefantinho*/
+     }
+#logo-symbol-wordmark > path:nth-child(2){
+         fill: var(--logo); /*Cor do olho do elefantinho*/
+     }    
+ #logo-symbol-wordmark > path:nth-child(3){
+         fill: var(--logo); /*Texto da logo */
+     }
+
+.column-link--logo:hover {
+    background-color: #f000 !important;
+}
+
+label.icon-button > span:nth-child(3),
+label.icon-button:hover {
+    color: black;
+    background: white;
+    border: 0px;
+} /*barra para conteúdo sensível*/
+
+.column > .scrollable,
+.column-back-button,
+.column-header,
+.column-inline-form {
+    border: var(--border);
+    /*Remove as bordas brancas nas colunas*/
+}
+
+.search__input,
+.search__input:focus,
+.notification__filter-bar button,
+.setting-text
+ {
+    background-color: var(--searchBar);
+    color: var(--searchTextBar);
+    /*barra de pesquisa */
+}
+
+/*
+    Aqui iniciam cores do texto
+*/
+.rules-list li:last-child,
+.prose li,
+.account__header__bio .account__header__fields dt,
+.search__icon .fa-times-circle,
+.server-banner__description,
+.sign-in-banner,
+.server-banner__introduction,
+.account__header__bio .account__header__fields > dt,
+dd,
+.regeneration-indicator__label strong,
+.attachment-list__list a,
+.attachment-list.compact .fa,
+.ui p,
+.landing-page p,
+.public-layout p,
+.getting-started__footer a,
+.navigation-bar,
+.navigation-bar__profile-account,
+.placeholder-widget,
+.endorsements-widget h4,
+.compose-form > compose-form__warning,
+compose-form__warning a,
+compose-form__modifiers,
+.reply-indicator__content a,
+.status__content a,
+.compose-form__upload .icon-button,
+.timeline-hint,
+.timeline-hint a,
+.conversation__content__names,
+.conversation__content__relative-time,
+.status-card__title,
+.table-action-link,
+.admin-wrapper .content h2,
+h3,
+label,
+.hint,
+body .muted-hint,
+.admin-wrapper .content > p,
+h2,
+h6,
+muted-hint,
+fields-group h6,
+.link-footer p a {
+    color: var(--mainText) !important;
+}
+
+.status__content,
+.reply-indicator__content,
+.trends__item__name,
+.trends__item__current,
+.load-more,
+.account__header__tabs__name h1,
+.account__header__tabs__name h1 small {
+    color: var(--mainText);
+}
+
+.table > thead > tr > th,
+.table td,
+.table th,
+.table > tbody > tr:nth-child(2n+1) > td,
+.table > tbody > tr:nth-child(2n+1) > th,
+.reply-indicator,
+.account__header__bio .account__header__fields dl,
+.follow_requests-unlocked_explanation,
+.follow_requests-unlocked_explanation a,
+.batch-table .nothing-here,
+.batch-table__row,
+.batch-table__toolbar {
+    background: var(--answer);
+    /*Cor da tela de respondendo...*/
+    color: var(--mainText);
+}
+
+.prose strong,
+.about__mail,
+.status__display-name,
+.display-name__account,
+.status__content a,
+.account .account__display-name,
+.trends__item__name a,
+.muted-hint a,
+.simple_form .hint a,
+.prose a,
+.admin-wrapper .content > p strong,
+h4 {
+    color: var(--account) !important;
+    /* cor dos links */
+}
+
+.display-name__html,
+.status__prepend,
+.status__display-name strong,
+.notification__relative_time,
+.status__relative-time,
+.detailed-status__display-name,
+.notification__message {
+    color: var(--mainText) !important;
+    /*Cor dos nomes*/
+}
+
+.icon-button,
+.poll__footer,
+.poll__link {
+    color: var(--icon);
+}
+/*Cor dos ícones*/
+
+.account__header__bar .avatar .account__avatar {
+    border-color: var(--bioColor);
+    /*Cor da borda do avatar*/
+}
+
+/*
+    A partir daqui começam edições nas colunas
+*/
+
+.column-header,
+.column-header__button,
+.column-header.active .column-header__icon,
+.column-header__collapsible-inner,
+.public-layout .header .nav-button,
+.column-header__back-button,
+.column-header__button.active,
+.drawer__tab,
+.privacy-dropdown.active .privacy-dropdown__value.active,
+.privacy-dropdown__option.active,
+.text-icon-button.active,
+.language-dropdown__dropdown__results__item.active,
+.icon-button.inverted.active,
+.report-modal__target,
+.button.button,
+.simple_form .block-button,
+.simple_form .button,
+.simple_form button,
+.simple_form .input.boolean .recommended,
+.column-back-button,
+.column-header > .column-header__back-button,
+.character-counter,
+.scrollable .column-link,
+.column-link--transparent,
+.account--panel,
+.button.logo-button,
+.button.button-secondary,
+.admin-wrapper .sidebar ul a,
+.admin-wrapper .sidebar-wrapper__inner,
+.admin-wrapper .sidebar ul a.selected,
+.account__header__account-note textarea,
+.filters,
+.filter-form {
+    background-color: var(--navBar);
+    /* Cor do plano de fundo */
+    color: var(--navText);
+    /*Cor do texto*/
+    border: var(--border);
+}
+/*muda a cor da barra superior de navegação, botão de toot, a cor do texto da coluna ao lado e o seu plano de fundo*/
+
+/*
+    A maior parte das cores do hover inicia aqui
+*/
+.about__meta,
+.about__section__title,
+.interaction-modal,
+.column-link:hover,
+.icon-with-badge__badge,
+.button-hover,
+.icon-button:hover,
+.account--panel,
+.button:hover,
+.button.logo-button:hover,
+.dropdown-menu__item a:hover,
+.load-more:hover,
+.button.button-secondary:hover .scrollable .column-link:hover,
+.public-layout .header .brand:hover,
+.public-layout .header .nav-button:hover,
+.column-header__button.active:hover,
+.drawer__header a:hover,
+.privacy-dropdown__option:hover,
+.privacy-dropdown__option.active:hover,
+.language-dropdown__dropdown__results__item.active:hover,
+.compose-form .compose-form__modifiers .compose-form__upload .icon-button:hover,
+a.status-card.compact:hover,
+.status-card:hover,
+a.status-card:hover,
+.admin-wrapper .sidebar ul a:hover,
+.simple_form .block-button:hover,
+.simple_form .button:hover,
+.simple_form button:hover,
+.scrollable .column-link:hover,
+.batch-table__row:nth-child(2n),
+.batch-table__row:nth-child(2n):hover,
+.batch-table__row:hover,
+.account__section-headline button,
+.notification__filter-bar button,
+.keyboard-shortcuts kbd,
+.column-link__badge, .column-subheading {
+    background-color: var(--hovBack);
+    /* cor do hover na coluna */
+    color: var(--mainText);
+}
+
+.about__domain-blocks__domain,
+.about__domain-blocks__domain:nth-child(2n),
+.ui__header,
+.column-link--transparent.active,
+.column-link--transparent:focus,
+.admin-wrapper .sidebar ul .simple-navigation-active-leaf a,
+.admin-wrapper .sidebar ul .simple-navigation-active-leaf a:hover {
+    color: var(--mainText);
+    /*cor da janela ativa na coluna*/
+    background-color: var(--actWindow);
+}
+
+.about__meta,
+article,
+.status,
+.status-public,
+.activity-stream .entry,
+.column > .scrollable,
+.drawer__header,
+.landing-page__information,
+.column-inline-form,
+.error-column,
+.getting-started,
+.regeneration-indicato,
+.drawer__inner.darker,
+.compose-form .compose-form__warning,
+.simple_form .recommended,
+.table-form .recommended,
+.report-modal__container,
+.report-modal__comment .setting-text-label,
+.admin-wrapper .content,
+.regeneration-indicator,
+.status-card,
+.confirmation-modal__container,
+.report-modal__target,
+.empty-column-indicator,
+.follow_requests-unlocked_explanation {
+    background-color: var(--mainCol);
+    border-bottom: 1px solid var(--bordColor);
+    color: var(--mainText);
+}
+/*cor da coluna principal central*/
+
+/*
+    Status detalhado
+*/
+.detailed-status,
+.detailed-status__action-bar {
+    background-color: var(--detail);
+    border-bottom: 1px;
+    border-top: 1px;
+}
+
+.detailed-status__meta {
+    color: var(--meta);
+} /*Metadados como data e ícone de privacidade sob os toots*/
+
+/*Edições na bio*/
+.account__header > div,
+.account__header__bar .avatar .account__avatar,
+.scrollable .account-card,
+.story {
+    background-color: var(--bioColor);
+    /*muda a cor da bio*/
+}
+
+.account__header__bar {
+    position: static;
+} /*Essa configuração faz com que a capa da bio não fique coberta pelo background*/
+
+.drawer__inner,
+.drawer__inner__mastodon,
+.account__section-headline a {
+    background-color: var(--answer);
+    /* muda a cor da lista da bio*/
+    color: var(--mainText);
+}
+
+.account__header__content a,
+.account__header__bio .account__header__fields a,
+account__header__joined,
+.account__header__bio .account__header__joined,
+account__header__extra__links,
+.account__header__bio .account__header__fields .verified a,
+.account__header__fields .verified__mark {
+    color: var(--mainText);
+    /*opções na bio como marca de verificado e etc*/
+}
+
+.column-subheading,
+.search-results__header,
+.search-results__section h5 {
+    background-color: var(--answer);
+    /*listas*/
+    color: var(--mainText);
+    /*cor do texto listas*/
+}
+
+.announcements,
+.flash-message {
+    background-color: var(--hovBack);
+    color: var(--mainText);
+} /*Plano de fundo da aba anúncios*/
+
+.announcements__item__content a.unhandled-link,
+.column-settings__section,
+.setting-toggle__label,
+.account__header__account-note label,
+.account__header__extra__links a,
+.account__section-headline a.active,
+.account__section-headline button.active,
+.notification__filter-bar a.active,
+.notification__filter-bar button.active,
+.attachment-list__list a {
+    color: var(--backColor);
+}
+}
